@@ -125,5 +125,5 @@ Jamendo requires `JAMENDO_CLIENT_ID`. The CLI includes a demo key fallback (`e76
 - Audio must remain on provider CDNs (Jamendo, Incompetech, ccMixter, IA). Do not download or re-host.
 - Respected Creative Commons attribution and license metadata.
 - Search results can be noisy — inspect candidates, search again with revised terms if needed.
-- ccMixter MP3s require a Referer header; use audio through the `/api/audio-proxy` endpoint when embedding in a page.
+- ccMixter MP3s require a Referer header. When embedding in a browser `<audio>` tag, route the stream URL through any Referer-adding proxy (e.g. a Cloudflare worker). Direct playback with a `Referer: https://ccmixter.org/` header also works.
 - Jamendo stream URLs may expire; re-search by track ID to refresh.

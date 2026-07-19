@@ -58,11 +58,11 @@ For full usage, see `SKILL.md` (loaded by Cohub Agent when the skill triggers).
 ```
 .
 ├── SKILL.md              # Agent skill instructions (loaded at runtime)
-├── cli.py                # Unified CLI — zero dependencies, Python stdlib
+├── cli.py                # Unified CLI — fully self-contained, Python stdlib only
 └── README.md             # This file
 ```
 
-Provider clients are shared with the companion `dj-agent` project in the same Cohub space (`catalog/{jamendo,incompetech,ccmixter,ia}_client.py`). The CLI auto-resolves their location at runtime.
+All four provider clients are inlined directly in `cli.py`. There are no external dependencies and no shared modules — clone the repo, run `cli.py`, and it works.
 
 ## Protocol
 
@@ -97,7 +97,7 @@ All commands return the same JSON structure:
 ### Fallback behavior
 
 - Jamendo requires `JAMENDO_CLIENT_ID` env var. Falls back gracefully — `multi` continues with remaining providers.
-- ccMixter MP3s need a Referer header. Proxy through the companion `dj-agent` server's `/api/audio-proxy` endpoint (which delegates to Cloudflare workers).
+- ccMixter MP3s need a Referer header. When embedding in a browser `<audio>` tag, route the stream URL through any Referer-adding proxy (e.g. a Cloudflare worker). Direct `curl` with `-H "Referer: https://ccmixter.org/"` also works.
 - All provider errors are non-fatal in `multi` mode. Stderr shows which providers were skipped.
 
 ## Constraints
