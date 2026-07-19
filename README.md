@@ -6,7 +6,7 @@
 
 # hyper-beat
 
-A Cohub Agent Skill for free-licensed music search across four providers (Jamendo, Incompetech, ccMixter, Internet Archive) with semantic mood-to-track matching and graceful fallback.
+An Agent Skill for free-licensed music search across four providers (Jamendo, Incompetech, ccMixter, Internet Archive) with semantic mood-to-track matching and graceful fallback. Works with Claude Code, Codex CLI, Cohub, and any agent runtime that supports the SKILL.md standard.
 
 ## Why
 
