@@ -106,6 +106,35 @@ All commands return the same JSON structure:
 - Respect Creative Commons attribution. License metadata is included in every track.
 - Jamendo stream URLs may expire; re-search by track ID to refresh.
 
+## Getting Jamendo API Access
+
+Jamendo requires a developer account for API access. It's free — sign up here:
+
+https://developer.jamendo.com/v3.0
+
+Once registered, set your Client ID:
+
+```bash
+export JAMENDO_CLIENT_ID="your_client_id"
+```
+
+Without it, hyper-beat falls back to its demo key (rate-limited) and gracefully skips Jamendo when it fails.
+
+## Acknowledgments
+
+This project would not exist without the artists and platforms that make their music freely available under Creative Commons and Public Domain licenses. We are grateful to:
+
+- **Jamendo** and its community of independent musicians
+- **Kevin MacLeod** (Incompetech), for a lifetime of film-scoring and an AI-accessible catalog
+- **ccMixter** and the remix community, stewarded by Creative Commons
+- **The Internet Archive**, for preserving and sharing our collective cultural heritage
+
+All music remains on the providers' own CDNs. No audio is copied, re-hosted, or redistributed by this project.
+
+## Disclaimer
+
+This tool searches publicly available, freely-licensed music catalogs. It does not host, distribute, or license any audio content. All rights remain with the respective artists and platforms. Users are responsible for complying with each track's specific Creative Commons license terms — attribution, non-commercial restrictions, and share-alike requirements vary per track.
+
 ## Author
 
 Built by [Jiaxin Kou](https://hypersampling.com) · [Neta Art](https://www.neta.art) · [GitHub](https://github.com/kjx-talesofai)
